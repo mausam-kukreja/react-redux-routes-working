@@ -1,3 +1,7 @@
-import config from './config';
+import settings from './setting';
+import tictacteo from './tictacteo';
 
-export default { config };
+export default {
+  settings,
+  tictacteo
+};
