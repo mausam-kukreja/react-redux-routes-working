@@ -7,11 +7,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 class Board extends Component {
-
   makeYourMove (rowIndex, columnIndex, xo) {
     !this.props.won && this.props.makeYourMove(rowIndex, columnIndex, xo);
   }
-
   getXO(rowIndex, columnIndex, xo) {
     if (xo === 'x') {
       return <X key={columnIndex} columnIndex={columnIndex} />;
@@ -21,11 +19,10 @@ class Board extends Component {
     }
     return <Y key={columnIndex} makeYourMove={this.makeYourMove.bind(this, rowIndex, columnIndex)} turn={this.props.turn} />;
   }
-
   render() {
     return (
       <div className='board'>
-        {
+         {
           Object.keys(this.props.board)
             .map(rowIndex => {
               return (

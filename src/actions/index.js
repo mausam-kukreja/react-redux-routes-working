@@ -6,4 +6,3 @@ const makeYourMove = (rowIndex, columnIndex, xo) => (dispatch) => {dispatch({
   columnIndex
 });
 }
-

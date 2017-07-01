@@ -1,5 +1,3 @@
-import types from '../action_types';
-
 const initialState = {
   loading: false,
   flash: null,

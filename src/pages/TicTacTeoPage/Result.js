@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
 class Result extends Component {
+
   render () {
     let result = ''; 
     if (this.props.turn) {

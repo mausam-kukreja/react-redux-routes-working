@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import s from './css';
 import ClockBar from '../ClockBar'
