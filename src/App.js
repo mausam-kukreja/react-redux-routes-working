@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SettingPage from './pages/SettingPage';
@@ -7,7 +7,9 @@ import ToDoPage from './pages/ToDoPage'
 import LobbyPage from './pages/LobbyPage'
 import store from './store';
 import MyApp from './MyApp';
-const App = () =>
+class App extends Component {
+  render() {
+    return ( 
   <Provider store={store}>
     <Router>
       <MyApp>
@@ -19,5 +21,8 @@ const App = () =>
           </Switch>
       </MyApp>
     </Router>
-  </Provider>;
+  </Provider>
+   );
+  }
+}
 export default App;
