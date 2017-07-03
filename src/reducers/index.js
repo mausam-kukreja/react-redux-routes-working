@@ -1,7 +1,9 @@
-import settings from './setting';
-import tictacteo from './tictacteo';
+import settings from './settings';
+import board from './board';
+import turn from './turn';
 
 export default {
   settings,
-  tictacteo
+  turn,
+  board,
 };

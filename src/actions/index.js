@@ -9,7 +9,7 @@ export const makeYourMove =(rowIndex, columnIndex, xo)=>{
 }
 export const addUser =(userData)=>{
 	return ({
-  type: types.USER_ADDED,
-  payload:userData
+  	type: types.USER_ADDED,
+  	payload:userData
 })
 }

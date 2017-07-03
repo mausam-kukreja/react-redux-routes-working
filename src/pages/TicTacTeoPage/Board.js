@@ -5,12 +5,14 @@ import O from './O';
 import { makeYourMove } from '../../actions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
 
 class Board extends Component {
-  makeYourMove (rowIndex, columnIndex, xo) {
-    !this.props.won && this.props.makeYourMove(rowIndex, columnIndex, xo);
+  makeYourMove (rowIndex, columnIndex) {
+    this.props.makeYourMove(rowIndex, columnIndex,this.props.turn);
   }
   getXO(rowIndex, columnIndex, xo) {
+
     if (xo === 'x') {
       return <X key={columnIndex} columnIndex={columnIndex} />;
     }
@@ -40,22 +42,7 @@ class Board extends Component {
     );
   }
 }
-Board.propTypes = {
-  board: PropTypes.object.isRequired,
-  turn: PropTypes.string.isRequired,
-  won: PropTypes.string,
-  draw: PropTypes.bool.isRequired,
-  makeYourMove: PropTypes.func.isRequired
-};
-export default connect(
-  ({board, turn, won, draw}) => ({
-    board, turn, won, draw
-  }),
-  (dispatch) => {
-    return {
-      makeYourMove (rowIndex, columnIndex, xo) {
-        dispatch(makeYourMove(rowIndex, columnIndex, xo));
-      }
-    };
-  }
-)(Board);
+function mapAction(dispatch){
+  return bindActionCreators({makeYourMove}, dispatch); 
+}
+export default connect(state=>(state),mapAction)(Board);

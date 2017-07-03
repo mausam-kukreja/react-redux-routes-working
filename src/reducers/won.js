@@ -1,13 +1,4 @@
-export const initialState = {
-  board: {
-    0: ['', '', ''],
-    1: ['', '', ''],
-    2: ['', '', '']
-  },
-  won: undefined,
-  draw: false,
-  turn: 'o'
-};
+export const initialState = 'No One';
 const XOInRow = (xo, row) => row.filter(el => el === xo).length;
 const XOInColumn = (xo, colNumber, ...rows) => rows.map(row => row[colNumber]).filter(el => el === xo).length;
 const XOInLeftSlide = (xo, ...rows) => {
@@ -38,8 +29,6 @@ const calculateWinner = (xo, board) => {
     return nextCheck.won ? nextCheck : answer;
   }, {won: false});
 };
-
-
 export default (state = initialState, action) =>  {
   switch (action.type) {
     case 'MARK_MOVE':
