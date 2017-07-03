@@ -17,6 +17,7 @@ class App extends Component {
             <Route path="/" exact component={LobbyPage} />
             <Route path="/settings" exact component={SettingPage} />
             <Route path="/TicTacTeo" exact component={TicTacTeoPage} />
+            <Route path="/Todo" exact component={ToDoPage} />
             <Route component={() => <h1>Not found</h1>} />
           </Switch>
       </MyApp>
