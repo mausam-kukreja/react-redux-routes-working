@@ -41,6 +41,7 @@ const SettingPage = React.createClass({
     if (value) {
       // value here is an instance of Person
       this.props.addUser(value);
+      this.setState({value:{}});
     }else{
       alert('invalid');
     }

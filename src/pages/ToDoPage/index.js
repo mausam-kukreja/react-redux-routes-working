@@ -45,10 +45,10 @@ class ToDoPage extends Component{
 					<s.ListContainer>
 						<div>
 							<h8>tasks</h8>
-							<Items  source="newTask" user={this.state.userSelected}/>
+							<Items  user={this.state.userSelected}/>
 						</div>	
 						<div>
-							<Items  source="oldTask" user={this.state.userSelected}/>
+							<Items  source="complete" user={this.state.userSelected}/>
 						</div>	
 					</s.ListContainer>
 				   </div>

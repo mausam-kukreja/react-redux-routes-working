@@ -27,7 +27,7 @@ class Items extends Component{
 					<ul>{
 						Object.keys(this.props.ToDo[this.props.user]).map((taskValue)=>{
 
-							if(this.props.source==="oldTask"){
+							if(this.props.source==="complete"){
 							return <li key={taskValue}> 
 										
 										{this.props.ToDo[this.props.user][taskValue]==="1" && <div>{taskValue}</div>} 
